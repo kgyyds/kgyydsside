@@ -61,10 +61,21 @@ header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.2s;
+  overflow: hidden;
 }
 
 .post:hover {
   transform: scale(1.02);
+}
+
+.post-expanded {
+  border: 2px solid #007BFF;
+}
+
+.post-content {
+  color: #333;
+  margin-top: 10px;
+  display: none; /* 默认隐藏 */
 }
 
 footer {
@@ -75,4 +86,27 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+/* 新增动画样式 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
 }
